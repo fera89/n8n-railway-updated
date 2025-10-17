@@ -1,5 +1,6 @@
 FROM n8nio/n8n:latest
 
 USER root
-RUN npm install -g n8n-nodes-firebase-admin
-RUN npm list -g --depth=0
+USER node
+WORKDIR /home/node/.n8n
+RUN npm install n8n-nodes-firebase-admin
